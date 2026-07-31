@@ -19,6 +19,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ghcr.io/alphabraga/juris-site:d792a82039d961c3c4cad0171cf7e109b6d8fb09
+            name: nginx:latest
             port:
               number: 80
