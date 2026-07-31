@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ghcr.io/alphabraga/juris-site:d792a82039d961c3c4cad0171cf7e109b6d8fb09
+        image: ghcr.io/alphabraga/juris-site:42601a491262460fc0a47f1219505826d5177dcf
         ports:
         - containerPort: 80
