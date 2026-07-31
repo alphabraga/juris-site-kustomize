@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+  namespace: thundertech
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - www.thundertech.com.br
+    secretName: thundertech-tls
+  rules:
+  - host: www.thundertech.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ghcr.io/alphabraga/juris-site:d792a82039d961c3c4cad0171cf7e109b6d8fb09
+            port:
+              number: 80
